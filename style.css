@@ -9,10 +9,11 @@ body {
 /* Header */
 header {
     text-align: center;
-    padding: 70px 20px;
+    padding: 60px 20px 40px;
     background-color: #ffffff;
     border-bottom: 1px solid #e5e7eb;
 }
+
 
 header h1 {
     font-size: 3rem;
@@ -72,20 +73,23 @@ footer {
 }
 
 nav {
-    text-align: center;
-    padding: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 15px 0;
     background-color: #ffffff;
     border-bottom: 1px solid #e5e7eb;
 }
 
 nav a {
-    margin: 0 12px;
     text-decoration: none;
     color: #2563eb;
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 1rem;
 }
 
 nav a:hover {
+    color: #1d4ed8;
     text-decoration: underline;
 }
 
@@ -106,3 +110,7 @@ nav a:hover {
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
     font-size: 1rem;
 }
+section {
+    margin-top: 30px;
+}
+
