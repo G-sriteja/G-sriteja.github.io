@@ -4,59 +4,94 @@
     <meta charset="UTF-8">
     <title>Experience | Sri Tej</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* extra styles only for expandable cards */
+        .expandable {
+            cursor: pointer;
+        }
+
+        .card-details {
+            display: none;
+            margin-top: 12px;
+            color: #334155;
+            font-size: 0.95rem;
+        }
+
+        .expandable.active .card-details {
+            display: block;
+        }
+
+        .hint {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-top: 6px;
+        }
+    </style>
 </head>
 <body>
 
     <!-- HEADER -->
     <header class="hero">
         <h1>Experience</h1>
-        <p>Leadership · Coordination · Digital Outreach</p>
+        <p>Click on a role to view details</p>
     </header>
 
     <!-- NAVBAR -->
-   <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="skills.html">Skills</a>
-    <a href="education.html">Education</a>
-    <a href="experience.html" class="active">Experience</a>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="skills.html">Skills</a>
+        <a href="education.html">Education</a>
+        <a href="experience.html" class="active">Experience</a>
+        <a href="contact.html">Contact</a>
+    </nav>
 
-    <a href="contact.html">Contact</a>
-</nav>
+    <!-- EXPERIENCE CARDS -->
+    <section class="card-grid">
 
+        <!-- CARD 1 -->
+        <div class="card expandable" onclick="toggleCard(this)">
+            <span class="icon">👨‍💼</span>
+            <strong>Social Media Coordinator</strong><br>
+            JNTUK SPE Student Chapter
+            <div class="hint">Click for more info</div>
 
-    <!-- EXPERIENCE SECTION -->
-<section class="card-grid">
-    
-    <div class="card">
-        <span class="icon">👨‍💼</span>
-        <strong>Social Media Coordinator</strong><br>
-        JNTUK SPE Student Chapter<br>
-        <em>May 2025 – April 2026</em>
-        <br><br>
-        Managed the online presence of the student chapter, coordinated
-        content publishing across platforms, and supported promotional
-        activities to improve engagement and visibility.
-    </div>
+            <div class="card-details">
+                <em>May 2025 – April 2026</em><br><br>
+                Managed the online presence of the student chapter, coordinated
+                content publishing across platforms, and supported promotional
+                activities to improve engagement and visibility.
+            </div>
+        </div>
 
-    <div class="card">
-        <span class="icon">🤝</span>
-        <strong>Student Volunteer</strong><br>
-        SDF Vidyadhan<br>
-        <em>2022 – Present</em>
-        <br><br>
-        Assisted new students in understanding and receiving scholarships
-        from SDF Vidyadhan for their further studies, providing guidance
-        and support throughout the process.
-    </div>
+        <!-- CARD 2 -->
+        <div class="card expandable" onclick="toggleCard(this)">
+            <span class="icon">🤝</span>
+            <strong>Student Volunteer</strong><br>
+            SDF Vidyadhan
+            <div class="hint">Click for more info</div>
 
-</section>
+            <div class="card-details">
+                <em>2022 – Present</em><br><br>
+                Assisted new students in understanding and receiving scholarships
+                from SDF Vidyadhan for their further studies, guiding them through
+                the process and helping ensure continuity in education.
+            </div>
+        </div>
 
+    </section>
 
     <!-- FOOTER -->
     <footer>
         <p>© 2026 Sri Tej</p>
     </footer>
+
+    <!-- SCRIPT -->
+    <script>
+        function toggleCard(card) {
+            card.classList.toggle("active");
+        }
+    </script>
 
 </body>
 </html>
