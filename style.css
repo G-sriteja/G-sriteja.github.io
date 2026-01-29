@@ -177,3 +177,63 @@ footer {
         transform: translateY(0);
     }
 }
+
+/* =======================
+   MOBILE RESPONSIVENESS
+======================= */
+@media (max-width: 768px) {
+
+    /* Hero section */
+    .hero {
+        padding: 40px 15px 30px;
+    }
+
+    .profile-pic {
+        width: 100px;
+        height: 100px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    /* Navbar */
+    nav {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    nav a {
+        font-size: 0.95rem;
+        padding: 6px 10px;
+    }
+
+    /* Content section */
+    section.content {
+        margin: 25px auto;
+        padding: 0 15px;
+    }
+
+    /* Cards */
+    .card-grid {
+        margin: 25px auto;
+        padding: 0 15px;
+        gap: 18px;
+    }
+
+    .card {
+        font-size: 1rem;
+        padding: 18px;
+    }
+
+    /* Disable aggressive zoom on small screens */
+    .card:hover {
+        transform: scale(1.02);
+    }
+
+}
