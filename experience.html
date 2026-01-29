@@ -4,17 +4,30 @@
     <meta charset="UTF-8">
     <title>Experience | Sri Tej</title>
     <link rel="stylesheet" href="style.css">
+
     <style>
-        /* extra styles only for expandable cards */
+        /* experience-specific behaviour */
         .expandable {
             cursor: pointer;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card-header img {
+            width: 34px;
+            height: 34px;
+            object-fit: contain;
         }
 
         .card-details {
             display: none;
             margin-top: 12px;
-            color: #334155;
             font-size: 0.95rem;
+            color: #334155;
         }
 
         .expandable.active .card-details {
@@ -25,6 +38,22 @@
             font-size: 0.85rem;
             color: #64748b;
             margin-top: 6px;
+        }
+
+        /* when one card is active, dim others */
+        .card-grid.has-active .card:not(.active) {
+            transform: scale(0.97);
+            opacity: 0.6;
+        }
+
+        /* active card highlight */
+        .expandable.active {
+            transform: scale(1.06);
+            background-color: #f0f6ff;
+            border: 1px solid #2563eb;
+            box-shadow:
+                0 0 0 3px rgba(37, 99, 235, 0.18),
+                0 20px 40px rgba(15, 23, 42, 0.18);
         }
     </style>
 </head>
@@ -47,35 +76,39 @@
     </nav>
 
     <!-- EXPERIENCE CARDS -->
-    <section class="card-grid">
+    <section class="card-grid" id="experienceGrid">
 
         <!-- CARD 1 -->
         <div class="card expandable" onclick="toggleCard(this)">
-            <span class="icon">👨‍💼</span>
-            <strong>Social Media Coordinator</strong><br>
+            <div class="card-header">
+                <img src="spe.png" alt="JNTUK SPE Logo">
+                <strong>Social Media Coordinator</strong>
+            </div>
             JNTUK SPE Student Chapter
             <div class="hint">Click for more info</div>
 
             <div class="card-details">
                 <em>May 2025 – April 2026</em><br><br>
-                Managed the online presence of the student chapter, coordinated
-                content publishing across platforms, and supported promotional
-                activities to improve engagement and visibility.
+                Designed posters for events and seminars, managed promotional
+                creatives, and handled the official <strong>jntuk_spe_sc</strong>
+                Instagram page to ensure consistent updates and audience engagement.
             </div>
         </div>
 
         <!-- CARD 2 -->
         <div class="card expandable" onclick="toggleCard(this)">
-            <span class="icon">🤝</span>
-            <strong>Student Volunteer</strong><br>
+            <div class="card-header">
+                <img src="sdf.png" alt="SDF Vidyadhan Logo">
+                <strong>Student Volunteer</strong>
+            </div>
             SDF Vidyadhan
             <div class="hint">Click for more info</div>
 
             <div class="card-details">
                 <em>2022 – Present</em><br><br>
-                Assisted new students in understanding and receiving scholarships
-                from SDF Vidyadhan for their further studies, guiding them through
-                the process and helping ensure continuity in education.
+                Assisted new students in receiving scholarships from SDF Vidyadhan
+                by guiding them through the application and verification process,
+                supporting their continuation of higher education.
             </div>
         </div>
 
@@ -89,7 +122,22 @@
     <!-- SCRIPT -->
     <script>
         function toggleCard(card) {
+            const grid = document.getElementById("experienceGrid");
+            const cards = grid.querySelectorAll(".expandable");
+
+            cards.forEach(c => {
+                if (c !== card) {
+                    c.classList.remove("active");
+                }
+            });
+
             card.classList.toggle("active");
+
+            if (grid.querySelector(".active")) {
+                grid.classList.add("has-active");
+            } else {
+                grid.classList.remove("has-active");
+            }
         }
     </script>
 
